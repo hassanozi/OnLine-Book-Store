@@ -1,0 +1,18 @@
+.book-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.book-card img {
+  width: 120px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.book-card img:hover {
+  transform: scale(1.05);
+}

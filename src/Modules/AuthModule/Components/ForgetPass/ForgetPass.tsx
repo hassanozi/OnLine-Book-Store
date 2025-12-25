@@ -32,7 +32,8 @@ export default function ForgetPass() {
             <TextField {...register('email',{required:'This is rquired filed'})} type='email' fullWidth label="Email" id="fullWidth" sx={{marginBottom:'1rem'}}/>
             {errors.email && <Typography variant='body2' color='red'>{errors.email.message?.toString()}</Typography>}
           
-            <Button type='submit' onClick={()=> navigate('/reset-pass')} variant="outlined" fullWidth >Send</Button>
+            <Button sx={{marginBottom:'2rem'}} type='submit' onClick={()=> navigate('/reset-pass')} variant="outlined" fullWidth >Send</Button>
+            <Button onClick={()=> navigate('/login')} variant="outlined" fullWidth >Login</Button>
           </form>
           
     </Stack>

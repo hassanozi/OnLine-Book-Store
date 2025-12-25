@@ -41,7 +41,9 @@ export default function ChangePass() {
             <TextField {...register('password_new',{required:'This is rquired filed'})} type='password' fullWidth sx={{marginBottom:'1rem'}}/>
             {errors.password_new && <Typography variant='body2' color='red'>{errors.password_new.message?.toString()}</Typography>}
 
-            <Button  onClick={()=> navigate('/login')} type='submit' variant="contained" fullWidth sx={{marginBottom:'1rem',backgroundColor:'#EF6B4A'}} >Save</Button>
+            <Button  sx={{marginBottom:'2rem'}} onClick={()=> navigate('/login')} type='submit' variant="contained" fullWidth sx={{marginBottom:'1rem',backgroundColor:'#EF6B4A'}} >Save</Button>
+            <Button onClick={()=> navigate('/login')} variant="outlined" fullWidth >Login</Button>
+
           </form>
           
     </Stack>

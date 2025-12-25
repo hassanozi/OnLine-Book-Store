@@ -43,6 +43,9 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import Divider from '@mui/material/Divider';
+import PersonIcon from '@mui/icons-material/Person';
+import LockPersonIcon from '@mui/icons-material/LockPerson';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 const pages = ['Home', 'About us', 'Books','New Release', 'Contact us', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -67,59 +70,77 @@ export function NavBar() {
   };
 
   return (
-    <AppBar position="static" sx={{
-        backgroundColor: '#fff',
-      }}>
+    <AppBar position="static" sx={{ backgroundColor: '#fff' }}>
       <Container maxWidth="xl">
-        <Toolbar disableGutters>
-            <Box sx={{ flexGrow: 0, mr: 2 }}>
-              <Tooltip title="Open settings">
-                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-                </IconButton>
-              </Tooltip>
-            </Box>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-            
-          
-         
-          <Box
-  sx={{
-    position: 'absolute',
-    left: '50%',
-    transform: 'translateX(-50%)',
-    display: { xs: 'none', md: 'flex' },
-    alignItems: 'center',
-  }}
->
-  {pages.map((page, index) => (
-    <React.Fragment key={page}>
-      <Button
-        sx={{
-          color: '#000',
-          textTransform: 'none',
-          px: 2, // spacing
-        }}
-      >
-        {page}
-      </Button>
-
-      {index < pages.length - 1 && (
-        <Divider
-          orientation="vertical"
-          flexItem
+        <Toolbar
+          disableGutters
           sx={{
-            height: 20,
-            mx: 2,
-            alignSelf: 'center', // 👈 THIS fixes alignment
+            display: 'flex',
+            justifyContent: 'space-between', // 🔥 MAIN FIX
+            alignItems: 'center',
           }}
-        />
-      )}
-    </React.Fragment>
-  ))}
-</Box>
+        >
+          {/* LEFT — Avatar */}
+          <Box>
+            <Tooltip title="Open settings">
+              <IconButton onClick={handleOpenUserMenu}>
+                <Avatar alt="User" />
+              </IconButton>
+            </Tooltip>
 
-          
+            <Menu
+              anchorEl={anchorElUser}
+              open={Boolean(anchorElUser)}
+              onClose={handleCloseUserMenu}
+            >
+              <Button onClick={handleCloseUserMenu}>Profile</Button>
+              <Button onClick={handleCloseUserMenu}>Dashboard</Button>
+              <Button onClick={handleCloseUserMenu}>Logout</Button>
+            </Menu>
+          </Box>
+
+          {/* CENTER — Pages */}
+          <Box
+            sx={{
+              display: { xs: 'none', md: 'flex' },
+              alignItems: 'center',
+            }}
+          >
+            {pages.map((page, index) => (
+              <React.Fragment key={page}>
+                <Button
+                  sx={{
+                    color: '#000',
+                    textTransform: 'none',
+                    fontWeight: 500,
+                  }}
+                >
+                  {page}
+                </Button>
+
+                {index < pages.length - 1 && (
+                  <Divider
+                    orientation="vertical"
+                    flexItem
+                    sx={{ mx: 2 }}
+                  />
+                )}
+              </React.Fragment>
+            ))}
+          </Box>
+
+          {/* RIGHT — Icons */}
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 2,
+            }}
+          >
+            <PersonIcon sx={{ color: 'gray', cursor: 'pointer' }} />
+            <LockPersonIcon sx={{ color: 'gray', cursor: 'pointer' }} />
+            <FavoriteIcon sx={{ color: 'gray', cursor: 'pointer' }} />
+          </Box>
         </Toolbar>
       </Container>
     </AppBar>

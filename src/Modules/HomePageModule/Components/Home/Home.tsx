@@ -1,13 +1,14 @@
 import React from 'react'
 import SwiperComp from '../Swiper/SwiperComp'
+import TopCategory from '../TopCategories/TopCategory'
 
 export default function Home() {
   return (
 
     <>
         <SwiperComp/>
-
-        <h1>Home</h1>
+        <TopCategory/>
+        {/* <h1>Home</h1> */}
     </>
 
     

@@ -1,0 +1,34 @@
+.slideContent {
+  display: flex;
+  align-items: center;        /* vertical centering */
+  justify-content: center;    /* horizontal centering */
+  gap: 40px;
+  width: 100%;
+}
+
+.slideText {
+  max-width: 45%;
+  text-align: left;
+}
+
+.slideContent img {
+  width: 520px;
+  max-width: 65%;
+  display: block;
+}
+
+.roseBg {
+  background-color: #fce9ea; /* 🌸 light rose */
+}
+/* Mobile */
+@media (max-width: 768px) {
+  .slideContent {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .slideText,
+  .slideContent img {
+    max-width: 100%;
+  }
+}
