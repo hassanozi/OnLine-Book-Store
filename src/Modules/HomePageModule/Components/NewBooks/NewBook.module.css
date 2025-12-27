@@ -1,0 +1,82 @@
+/* ===== SECTION ===== */
+.roseBg {
+  background-color: #f7dbdc;
+  min-height: 500px;
+  position: relative;
+  overflow: visible;
+}
+
+/* ===== SWIPER FIX ===== */
+.roseBg :global(.swiper) {
+  padding-bottom: 60px;       /* space for bullets */
+  overflow: visible;
+}
+
+.roseBg :global(.swiper-pagination) {
+  position: absolute;
+  bottom: -30px !important;  /* move bullets down */
+  width: 100%;
+  text-align: center;
+}
+
+/* ===== CARD ===== */
+.bookCard {
+  width: 200px;
+  height: 290px;
+  margin: auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 10px;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* ===== IMAGE WRAPPER ===== */
+.imageWrap {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.bookCard img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: 0.4s ease;
+}
+
+/* ===== ADD TO CART BAR ===== */
+.addToCart {
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  width: 100%;
+  height: 45px;
+  background: #dc6165;
+  color: white;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+/* ===== HOVER EFFECT ===== */
+.bookCard:hover .addToCart {
+  bottom: 0;
+}
+
+.bookCard:hover img {
+  transform: scale(1.08);
+}
+
+/* ===== TEXT ===== */
+.bookCard p {
+  font-size: 14px;
+  margin-top: 6px;
+}

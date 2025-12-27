@@ -1,0 +1,5 @@
+.roseBg {
+  background-color: #fccad7;   /* your rose color */
+  border: 60px solid white;     /* white outline */     /* rounded corners */
+  padding: 40px;
+}

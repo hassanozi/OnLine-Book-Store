@@ -1,18 +1,109 @@
-.book-card {
+.booksRow {
   display: flex;
   justify-content: center;
-  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-.book-card img {
-  width: 120px;
-  height: 160px;
-  object-fit: cover;
+.bookCard {
+  width: 180px;
+  background: #fff;
   border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 10px;
+  text-align: center;
 }
 
-.book-card img:hover {
+.bookCard img:hover {
   transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.bookCard p {
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.categoryTitle {
+  color: red;
+  position: relative;
+  padding-left: 30px;
+}
+
+.categoryTitle::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 20px;
+  height: 2px;
+  background-color: red;
+  transform: translateY(-50%);
+}
+
+/* Swiper wrapper */
+.topCategorySwiper {
+  position: relative;
+  padding-bottom: 60px; /* space for bullets */
+}
+
+/* Default pagination bullets */
+:global(.topCategorySwiper .swiper-pagination) {
+  position: relative !important;
+  bottom: 0 !important;
+  text-align: center !important;
+  margin-top: 20px;
+}
+
+:global(.topCategorySwiper .swiper-pagination-bullet) {
+  width: 12px !important;
+  height: 12px !important;
+  background-color: red !important;
+  border-radius: 50% !important;
+  display: inline-block;
+  margin: 0 5px !important;
+  opacity: 1 !important;
+}
+
+:global(.topCategorySwiper .swiper-pagination-bullet-active) {
+  background-color: darkred !important;
+}
+
+/* Navigation arrows */
+:global(.topCategorySwiper .swiper-button-prev),
+:global(.topCategorySwiper .swiper-button-next) {
+  position: absolute !important;
+  top: 10px !important;
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  background-color: red !important;
+  color: white !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  left: auto !important;
+}
+
+/* position arrows on the right */
+:global(.topCategorySwiper .swiper-button-prev) {
+  right: 55px !important;
+}
+
+:global(.topCategorySwiper .swiper-button-next) {
+  right: 10px !important;
+}
+
+/* arrow icons */
+:global(.topCategorySwiper .swiper-button-prev::after),
+:global(.topCategorySwiper .swiper-button-next::after) {
+  font-size: 14px !important;
+  font-weight: bold !important;
+  color: white !important;
+}
+
+/* hover for arrows */
+:global(.topCategorySwiper .swiper-button-prev:hover),
+:global(.topCategorySwiper .swiper-button-next:hover) {
+  background-color: darkred !important;
 }

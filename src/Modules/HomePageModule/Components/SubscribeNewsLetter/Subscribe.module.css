@@ -1,0 +1,50 @@
+.roseBg {
+  background-color: #f5c3c5;
+  height: 500px;
+  position: relative;
+}
+
+.orange {
+  background-color: #f9575c;
+  height: 400px;
+  width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 50px;
+  color: #fff;
+}
+
+
+.subscribeBox {
+  position: absolute;
+  top: 420px; /* move down as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 350px;
+}
+
+.subscribeBox input {
+  width: 100%;
+  padding: 12px 100px 12px 15px; /* right padding for button */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.subscribeBox button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%; /* matches input height */
+  border: none;
+  background-color: #f9575c;
+  color: white;
+  padding: 0 20px;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+.subscribeBox button:hover {
+  background-color: #e8444f;
+}
